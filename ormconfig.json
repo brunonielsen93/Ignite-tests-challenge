@@ -1,19 +1,17 @@
 {
-  "username": "postgres",
-  "password": "docker",
-
-  "name": "default",
   "type": "postgres",
+  "port" : 5432,
   "host": "localhost",
-  "port": 5432,
-  "database": "fin_api",
+  "username": "docker",
+  "password": "ignite",
+  "database": "rentx",
+  "migrations":[
+    "./src/shared/infra/typeorm/migrations/*.ts"
+  ],
   "entities": [
     "./src/modules/**/entities/*.ts"
   ],
-  "migrations": [
-    "./src/database/migrations/*.ts"
-  ],
-  "cli": {
-    "migrationsDir": "./src/database/migrations"
+  "cli":{
+    "migrationsDir": "./src/shared/infra/typeorm/migrations"
   }
 }
